@@ -1,5 +1,4 @@
 
-import { Body } from '../components/Body'
 import { Header } from '../components/Header'
 import { Sidebar } from '../components/Sidebar'
 import { Footer } from '../components/Footer'
@@ -11,7 +10,7 @@ export default function Layout() {
             <div className='header-app'>
                 <Header />
             </div>
-            <div className="body-app">
+            <div className="flex">
                 <Sidebar />
                 <Outlet />
             </div>

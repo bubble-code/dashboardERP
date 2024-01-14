@@ -12,6 +12,15 @@ export const Sidebar = () => {
         <i className="fas fa-fa-exclamation-circle ml-2 text-red-500">sdsds</i>
       </button>
       <div className="lg:flex lg:flex-col">
+      <NavLink to={'maestros'} style={({ isActive, isPending }) => {
+          return {
+            color: isActive ? "red" : "inherit",
+          };
+        }}
+          className={({ isActive, isPending }) => {
+            return isActive ? "active" : isPending ? "pending" : "";
+          }} >Maestros</NavLink>
+
         <NavLink to={'busquedas'} style={({ isActive, isPending }) => {
           return {
             color: isActive ? "red" : "inherit",
@@ -20,6 +29,8 @@ export const Sidebar = () => {
           className={({ isActive, isPending }) => {
             return isActive ? "active" : isPending ? "pending" : "";
           }} >Busquedas</NavLink>
+          
+
         <NavLink to={'ofs'} style={({ isActive, isPending }) => {
           return {
             color: isActive ? "red" : "inherit",
@@ -28,7 +39,16 @@ export const Sidebar = () => {
           className={({ isActive, isPending }) => {
             return isActive ? "active" : isPending ? "pending" : "";
           }}  >Orden Fabrica</NavLink>
-        {/* Agrega más opciones según sea necesario */}
+
+
+        <NavLink to={'ofertas'} style={({ isActive, isPending }) => {
+          return {
+            color: isActive ? "red" : "inherit",
+          };
+        }}
+          className={({ isActive, isPending }) => {
+            return isActive ? "active" : isPending ? "pending" : "";
+          }}  >Ofertas</NavLink>
       </div>
     </aside>
   )

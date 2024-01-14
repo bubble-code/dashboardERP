@@ -1,0 +1,11 @@
+ .ant-table{
+    font-size: 8px !important;
+} 
+.ant-table-cell{
+    word-wrap: break-word !important;
+    white-space: normal !important;
+}
+.ant-table-thead > tr > th {
+  background-color: lightgray !important;
+  font-size: 10px !important;
+}
