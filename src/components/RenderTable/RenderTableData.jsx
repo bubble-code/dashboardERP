@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { AgGridReact } from 'ag-grid-react'
 import PropTypes from "prop-types";
 import './style.css'
@@ -6,7 +5,7 @@ import 'ag-grid-community/styles/ag-grid.css'
 import 'ag-grid-community/styles/ag-theme-quartz.css'
 
 
-export const RenderTable = ({ data }) => {
+export const RenderTable = ({ data, height = '75vh' }) => {
     if (!data || data.length === 0) {
         return <p>No hay datos para mostrar.</p>;
     }
@@ -21,7 +20,7 @@ export const RenderTable = ({ data }) => {
     }
 
     return (
-        <div className='ag-theme-quartz' style={{ height: 550 }}>
+        <div className='ag-theme-quartz' style={{ height: height }}>
             <AgGridReact
                 rowData={data}
                 columnDefs={columns()}
@@ -31,6 +30,8 @@ export const RenderTable = ({ data }) => {
                 rowGroupPanelShow={'always'}
                 pivotPanelShow={'always'}
                 pagination={true}
+                paginationPageSize={15}
+                className='text-xs'
             />
         </div>
     )
@@ -38,5 +39,6 @@ export const RenderTable = ({ data }) => {
 
 
 RenderTable.propTypes = {
-    data: PropTypes.array
+    data: PropTypes.array,
+    height: PropTypes.string
 };
